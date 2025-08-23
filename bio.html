@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ratan Tata — Biography, Timeline, Works & Legacy</title>
+  <meta name="description" content="A rich, single‑file HTML page celebrating Ratan Tata — life, leadership, acquisitions, philanthropy, quotes, FAQs and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #10172a;
+      --muted: #8ea0bf;
+      --text: #e6eeff;
+      --accent: #6ba8ff;
+      --accent-2: #a5ffe2;
+      --ring: #3b82f6;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 80% -10%, #1a2443 0%, transparent 60%) ,
+                  radial-gradient(900px 600px at -10% 120%, #11203b 0%, transparent 60%),
+                  var(--bg);
+      line-height:1.65;
+    }
+    a{ color:var(--accent); text-decoration:none }
+    a:hover{ text-decoration:underline }
+    .container{ max-width:1200px; margin:0 auto; padding: 0 20px }
+    header.site{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(120%) blur(10px);
+      background: linear-gradient(180deg, rgba(16,23,42,.9), rgba(16,23,42,.65));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0 }
+    .nav .brand{ display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px }
+    .logo{ width:36px; height:36px; border-radius:12px; background:linear-gradient(135deg,#60a5fa,#a78bfa); display:grid; place-items:center; box-shadow: var(--shadow)}
+    .logo svg{ width:22px; height:22px }
+    .nav ul{ list-style:none; display:flex; gap:18px; margin:0; padding:0; font-weight:600 }
+    .nav a{ display:inline-block; padding:8px 10px; border-radius:10px }
+    .nav a:hover{ background: rgba(255,255,255,.06) }
+    .cta{ display:flex; gap:10px }
+    .btn{ appearance:none; border:none; border-radius:14px; padding:10px 14px; font-weight:700; cursor:pointer; background:#1f2937; color:var(--text); box-shadow: var(--shadow); transition: transform .08s ease, filter .2s }
+    .btn:hover{ filter: brightness(1.1) }
+    .btn:active{ transform: translateY(1px) }
+    .btn.primary{ background: linear-gradient(135deg, #60a5fa, #34d399) }
+
+    /* Hero */
+    .hero{ position:relative; overflow:hidden; }
+    .hero .wrap{ display:grid; grid-template-columns: 1.15fr .85fr; gap:30px; align-items:center; padding: 40px 0 60px }
+    .badge{ display:inline-flex; align-items:center; gap:8px; background:#0f172a; border:1px solid rgba(255,255,255,.08); padding:6px 10px; border-radius:999px; color:var(--muted); font-weight:700; box-shadow: var(--shadow) }
+    .title{ font-family: 'Playfair Display', serif; font-size: clamp(38px, 5vw, 64px); line-height:1.07; margin:14px 0 }
+    .subtitle{ font-size: clamp(16px, 1.9vw, 20px); color:#c7d7ff; margin: 0 0 18px }
+    .hero-figure{ position:relative; aspect-ratio: 4/5; border-radius: 24px; overflow:hidden; border:1px solid rgba(255,255,255,.08); box-shadow: var(--shadow) }
+    .hero-figure .ring{ position:absolute; inset:-30px; background: conic-gradient(from 0deg, #60a5fa, #a5b4fc, #34d399, #60a5fa); filter: blur(40px); opacity:.35; }
+    .hero-figure img{ position:relative; display:block; width:100%; height:100%; object-fit:cover; }
+    .hero .meta{ display:flex; gap:14px; flex-wrap:wrap; margin-top:12px }
+    .hero .chip{ background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); padding:6px 10px; border-radius: 999px; font-weight:600; color:#dbe7ff }
+
+    /* Sections */
+    section{ padding: 64px 0 }
+    section .h2{ font-family:'Playfair Display',serif; font-size: clamp(28px, 3.4vw, 40px); margin: 0 0 16px }
+    section .lead{ color:#c7d7ff; margin: 0 0 24px }
+
+    .grid{ display:grid; gap:20px }
+    .grid.cols-3{ grid-template-columns: repeat(3, 1fr) }
+    .grid.cols-2{ grid-template-columns: repeat(2, 1fr) }
+    .grid.cols-4{ grid-template-columns: repeat(4, 1fr) }
+    @media (max-width: 960px){
+      .hero .wrap{ grid-template-columns: 1fr }
+      .grid.cols-3, .grid.cols-4{ grid-template-columns: 1fr 1fr }
+    }
+    @media (max-width: 680px){
+      .grid.cols-2, .grid.cols-3, .grid.cols-4{ grid-template-columns: 1fr }
+    }
+
+    .card{ background: linear-gradient(180deg, rgba(17,24,39,.8), rgba(12,18,34,.9)); border:1px solid rgba(255,255,255,.08); border-radius: 20px; padding:18px; box-shadow: var(--shadow) }
+    .card .k{ font-size: 28px; font-weight:900 }
+    .muted{ color:var(--muted) }
+
+    .pill{ display:inline-block; padding: 6px 10px; border-radius:999px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); font-weight:700 }
+
+    .list{ margin:0; padding:0; list-style:none }
+    .list li{ display:grid; grid-template-columns: 120px 1fr; gap:16px; padding:14px; border-radius:14px; border: 1px dashed rgba(255,255,255,.08); background: rgba(255,255,255,.03) }
+    .list li + li{ margin-top:10px }
+    .list .year{ font-weight:900; color:#dee9ff }
+
+    /* Quote */
+    .quote{ position:relative; padding:24px; border-radius:24px; border:1px solid rgba(255,255,255,.1); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); box-shadow: var(--shadow) }
+    .quote p{ font-size: clamp(18px, 2vw, 22px); font-weight:700; margin:0 0 8px }
+    .quote .attribution{ color:#c7d7ff; font-weight:600 }
+
+    /* Table */
+    table{ width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:16px; box-shadow: var(--shadow); border:1px solid rgba(255,255,255,.08) }
+    thead th{ position:sticky; top:0; background:#0e152a; text-align:left; padding:12px; font-weight:800; letter-spacing:.2px }
+    tbody td{ padding:12px; border-top:1px solid rgba(255,255,255,.06) }
+
+    /* Footer */
+    footer{ padding:40px 0; color:#9fb3d9; border-top:1px solid rgba(255,255,255,.06) }
+
+    /* Utility */
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+
+    /* Search */
+    .searchbar{ display:flex; gap:10px; align-items:center; background:#0f172a; border:1px solid rgba(255,255,255,.08); padding:8px 12px; border-radius:14px }
+    .searchbar input{ flex:1; background:transparent; border:0; color:var(--text); outline:none; font-size:16px }
+
+    /* Back to top */
+    #backToTop{ position:fixed; right:18px; bottom:18px; z-index:99 }
+
+    /* Dark/Light toggle (light is optional theme) */
+    .toggle{ display:flex; align-items:center; gap:8px }
+
+    .tagcloud{ display:flex; flex-wrap:wrap; gap:8px }
+  </style>
+</head>
+<body>
+  <!-- ====== Header / Navigation ====== -->
+  <header class="site">
+    <div class="container nav" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l3 7h7l-5.5 4 2.5 7L12 16l-7 4 2.5-7L2 9h7z"/>
+          </svg>
+        </div>
+        <span>Ratan Tata</span>
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#works">Key Works</a></li>
+        <li><a href="#philanthropy">Philanthropy</a></li>
+        <li><a href="#quotes">Quotes</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="cta">
+        <button id="themeBtn" class="btn" aria-pressed="false" title="Toggle theme">Toggle Theme</button>
+        <a class="btn primary" href="#download" onclick="downloadPage()">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== Hero ====== -->
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="badge">Industrialist • Philanthropist • Visionary</span>
+        <h1 class="title">Ratan Naval Tata</h1>
+        <p class="subtitle">An Indian business leader and philanthropist best known for leading the Tata Group into a global enterprise and championing ethical leadership and nation‑building.</p>
+        <div class="hero .actions">
+          <a class="btn primary" href="#about">Explore Biography</a>
+          <a class="btn" href="#timeline">See the Journey</a>
+        </div>
+        <div class="hero meta">
+          <span class="chip">Former Chairman, Tata Sons (1991–2012, 2016–2017)</span>
+          <span class="chip">Padma Bhushan (2000)</span>
+          <span class="chip">Padma Vibhushan (2008)</span>
+        </div>
+      </div>
+      <figure class="hero-figure" aria-label="Portrait illustration">
+        <div class="ring" aria-hidden="true"></div>
+        <img alt="Stylized portrait silhouette of Ratan Tata" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 620'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2360a5fa'/><stop offset='1' stop-color='%2334d399'/></linearGradient></defs><rect width='500' height='620' fill='%2310172a'/><circle cx='250' cy='190' r='120' fill='url(%23g)' opacity='.25'/><path d='M310 230c0 33-27 60-60 60s-60-27-60-60 27-60 60-60 60 27 60 60z' fill='%23a5ffe2' opacity='.3'/><rect x='140' y='300' width='220' height='240' rx='28' fill='%23fff' opacity='.06'/><text x='250' y='575' font-size='20' text-anchor='middle' fill='%23dbeafe' opacity='.8'>Ratan Tata</text></svg>" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- ====== Stats ====== -->
+  <section id="stats">
+    <div class="container grid cols-4">
+      <div class="card" role="group" aria-label="High‑level stats">
+        <div class="k" data-k="1868">1868</div>
+        <div class="muted">Tata Group Founded (historical)</div>
+      </div>
+      <div class="card">
+        <div class="k" data-k="100">100+ </div>
+        <div class="muted">Countries where Tata operates</div>
+      </div>
+      <div class="card">
+        <div class="k" data-k="30">30+</div>
+        <div class="muted">Companies under the Group (major)</div>
+      </div>
+      <div class="card">
+        <div class="k" data-k="66">66%</div>
+        <div class="muted">Tata Sons equity held by philanthropic trusts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== About ====== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="h2">About Ratan Tata</h2>
+      <p class="lead">Born on 28 December 1937 in Bombay (now Mumbai), Ratan Naval Tata is an Indian industrialist and philanthropist. He served as Chairman of <strong>Tata Sons</strong> and led the <strong>Tata Group</strong> through a period of global expansion, acquisitions, and innovation. Educated in architecture at <strong>Cornell University</strong> (B.Arch, 1962) and later an alumnus of Harvard Business School’s Advanced Management Program, he is known for his belief in 
+      <em>“doing the right thing even when no one is watching.”</em></p>
+
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Leadership</h3>
+          <p>As Chairman (1991–2012, interim 2016–2017), he oversaw transformative acquisitions like <strong>Tetley</strong>, <strong>Corus</strong>, and <strong>Jaguar Land Rover</strong>, while fostering home‑grown innovations such as the <strong>Tata Indica</strong> and the frugal engineering behind the <strong>Tata Nano</strong>.</p>
+        </div>
+        <div class="card">
+          <h3>Values</h3>
+          <p>Tata’s leadership emphasized ethics, long‑term thinking, trust with stakeholders, and building institutions that outlive individuals. Much of Tata Sons’ equity is held by philanthropic trusts, channeling profits back into society.</p>
+        </div>
+        <div class="card">
+          <h3>Advisory & Global Roles</h3>
+          <p>He has served on numerous boards and advisory councils across business and academia, and is a trusted voice on entrepreneurship, innovation, and responsible capitalism.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Timeline ====== -->
+  <section id="timeline">
+    <div class="container">
+      <h2 class="h2">Life & Career Timeline</h2>
+      <div class="searchbar" role="search">
+        <input id="timelineSearch" placeholder="Filter by year or keyword (e.g., Jaguar, Cornell, Padma)" aria-label="Filter timeline"/>
+        <button class="btn" onclick="filterTimeline()">Search</button>
+        <button class="btn" onclick="resetTimeline()">Reset</button>
+      </div>
+      <ul class="list" id="timelineList">
+        <li data-tags="1937 birth mumbai"><div class="year">1937</div><div>Born in Bombay (Mumbai), India.</div></li>
+        <li data-tags="1962 cornell architecture education"><div class="year">1962</div><div>Earned B.Arch. from Cornell University’s College of Architecture, Art, and Planning.</div></li>
+        <li data-tags="1962 tata steel shop floor early career"><div class="year">1962</div><div>Joined Tata Steel; worked on the shop floor in Jamshedpur, learning operations from the ground up.</div></li>
+        <li data-tags="1971 nelco turnaround"><div class="year">1971</div><div>Appointed Director‑in‑Charge of NELCO; focused on a turnaround strategy.</div></li>
+        <li data-tags="1991 chairman tata sons leadership"><div class="year">1991</div><div>Became Chairman of Tata Sons; initiated strategic restructuring and globalization.</div></li>
+        <li data-tags="2000 padma bhushan award"><div class="year">2000</div><div>Awarded the <strong>Padma Bhushan</strong>, one of India’s highest civilian honors.</div></li>
+        <li data-tags="2000 tetley acquisition tata tea"><div class="year">2000</div><div>Tata Tea acquired <strong>Tetley</strong>, marking a major global expansion.</div></li>
+        <li data-tags="2007 corus acquisition tata steel europe"><div class="year">2007</div><div>Tata Steel acquired <strong>Corus</strong> (later Tata Steel Europe), expanding steel footprint.</div></li>
+        <li data-tags="2008 jaguar land rover acquisition tata motors jlr"><div class="year">2008</div><div>Tata Motors acquired <strong>Jaguar Land Rover</strong>, elevating the automotive portfolio.</div></li>
+        <li data-tags="2008 padma vibhushan award"><div class="year">2008</div><div>Conferred the <strong>Padma Vibhushan</strong>, India’s second‑highest civilian award.</div></li>
+        <li data-tags="2009 tata swach innovation"><div class="year">2009</div><div>Launched <strong>Tata Swach</strong>, a low‑cost water purifier aimed at safe drinking water access.</div></li>
+        <li data-tags="2012 retirement chairman handover"><div class="year">2012</div><div>Retired as Chairman of Tata Sons after two decades of leadership.</div></li>
+        <li data-tags="2016 2017 interim chairman"><div class="year">2016</div><div>Returned as Interim Chairman of Tata Sons (2016–2017) during a transition period.</div></li>
+        <li data-tags="startups investments mentorship"><div class="year">2014–</div><div>Actively mentors entrepreneurs and invests in Indian startups across sectors.</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====== Key Works / Portfolio ====== -->
+  <section id="works">
+    <div class="container">
+      <h2 class="h2">Key Works & Strategic Moves</h2>
+      <p class="lead">A snapshot of signature decisions, products, and acquisitions associated with Ratan Tata’s tenure and influence.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Tetley (2000)</h3>
+          <p>Tata Tea’s acquisition of Tetley transformed the group into a global beverage player, unlocking distribution and brand presence worldwide.</p>
+          <span class="pill">Globalization</span>
+        </div>
+        <div class="card">
+          <h3>Corus (2007)</h3>
+          <p>Tata Steel’s purchase of European steelmaker Corus expanded capacity and capabilities, integrating advanced technologies and markets.</p>
+          <span class="pill">Scale & Capability</span>
+        </div>
+        <div class="card">
+          <h3>Jaguar Land Rover (2008)</h3>
+          <p>The acquisition revitalized JLR under Tata Motors’ stewardship, with renewed product pipelines and global sales growth in subsequent years.</p>
+          <span class="pill">Brand Revitalization</span>
+        </div>
+        <div class="card">
+          <h3>Tata Nano</h3>
+          <p>An ambitious project to deliver an affordable car through frugal engineering, pushing boundaries of cost, safety, and manufacturing efficiency.</p>
+          <span class="pill">Frugal Innovation</span>
+        </div>
+        <div class="card">
+          <h3>Tata Indica</h3>
+          <p>One of the first indigenously developed passenger cars in India, signaling confidence in local design and manufacturing prowess.</p>
+          <span class="pill">Make in India</span>
+        </div>
+        <div class="card">
+          <h3>Tata Swach</h3>
+          <p>Low‑cost water purification leveraging nanotechnology, aimed at improving public health for millions of households.</p>
+          <span class="pill">Social Impact</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Philanthropy ====== -->
+  <section id="philanthropy">
+    <div class="container">
+      <h2 class="h2">Philanthropy & Social Impact</h2>
+      <p class="lead">Through the <strong>Tata Trusts</strong> and personal initiatives, Ratan Tata has been closely associated with giving in health, education, water, livelihoods, and research. A significant share of Tata Sons is held by charitable trusts, funneling dividends to social causes.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Healthcare</h3>
+          <p>Support for cancer care, public health infrastructure, and medical research, including centers of excellence and community programs.</p>
+        </div>
+        <div class="card">
+          <h3>Education</h3>
+          <p>Scholarships and institutional grants to leading universities in India and abroad; backing for science, engineering, and design education.</p>
+        </div>
+        <div class="card">
+          <h3>R&D & Innovation</h3>
+          <p>Grants for frontier research in technology and society, and initiatives empowering startups and social entrepreneurs.</p>
+        </div>
+      </div>
+      <div class="quote" style="margin-top:18px">
+        <p>“I don’t believe in taking right decisions. I take decisions and then make them right.”</p>
+        <div class="attribution">— Ratan N. Tata</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Honors ====== -->
+  <section id="honors">
+    <div class="container">
+      <h2 class="h2">Honors & Recognition</h2>
+      <table aria-label="Honors and awards">
+        <thead>
+          <tr><th>Year</th><th>Honor</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2000</td><td>Padma Bhushan</td><td>Government of India</td></tr>
+          <tr><td>2008</td><td>Padma Vibhushan</td><td>Government of India</td></tr>
+          <tr><td>—</td><td>Multiple honorary doctorates</td><td>Acknowledgements from universities in India and abroad</td></tr>
+          <tr><td>—</td><td>Global leadership awards</td><td>For ethics, innovation, and industry contributions</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== Quotes (interactive) ====== -->
+  <section id="quotes">
+    <div class="container">
+      <h2 class="h2">Selected Quotes</h2>
+      <div class="searchbar">
+        <input id="quoteSearch" placeholder="Search quotes (e.g., decision, risk, ethics)" aria-label="Search quotes"/>
+        <button class="btn" onclick="filterQuotes()">Search</button>
+        <button class="btn" onclick="resetQuotes()">Reset</button>
+      </div>
+      <div class="grid cols-2" id="quoteGrid">
+        <div class="quote" data-tags="decision perseverance right decisions">
+          <p>“I don’t believe in taking right decisions. I take decisions and then make them right.”</p>
+          <div class="attribution">— Ratan N. Tata</div>
+        </div>
+        <div class="quote" data-tags="aspiration dream wings fear">
+          <p>“None can destroy iron, but its own rust can! Likewise, none can destroy a person, but his own mindset can.”</p>
+          <div class="attribution">— Ratan N. Tata</div>
+        </div>
+        <div class="quote" data-tags="people ethics kindness respect">
+          <p>“If you want to walk fast, walk alone. But if you want to walk far, walk together.”</p>
+          <div class="attribution">— Ratan N. Tata</div>
+        </div>
+        <div class="quote" data-tags="risk entrepreneurship leap">
+          <p>“Take the stones people throw at you. And use them to build a monument.”</p>
+          <div class="attribution">— Ratan N. Tata</div>
+        </div>
+      </div>
+      <div class="tagcloud" style="margin-top:10px">
+        <span class="pill" onclick="quickQuoteTag('decision')">decision</span>
+        <span class="pill" onclick="quickQuoteTag('ethics')">ethics</span>
+        <span class="pill" onclick="quickQuoteTag('risk')">risk</span>
+        <span class="pill" onclick="quickQuoteTag('teamwork')">teamwork</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Companies Table ====== -->
+  <section id="companies">
+    <div class="container">
+      <h2 class="h2">Tata Group — A Glimpse</h2>
+      <p class="lead">Indicative list of major companies and domains associated with the Tata Group. (For learning/demo only.)</p>
+      <table aria-label="Companies">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Domain</th>
+            <th>Notable Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Tata Steel</td><td>Metals</td><td>Among the top global steel producers; includes Tata Steel Europe.</td></tr>
+          <tr><td>Tata Motors</td><td>Automotive</td><td>Owner of Jaguar Land Rover; passenger & commercial vehicles.</td></tr>
+          <tr><td>Tata Consultancy Services (TCS)</td><td>IT Services</td><td>Leading global IT services, consulting, and business solutions organization.</td></tr>
+          <tr><td>Tata Power</td><td>Energy</td><td>Conventional and renewable power generation, transmission, and distribution.</td></tr>
+          <tr><td>Tata Chemicals</td><td>Chemicals</td><td>Agrochemicals, consumer products, and materials science.</td></tr>
+          <tr><td>Tata Consumer Products</td><td>Food & Beverage</td><td>Includes brands like Tetley; beverages and packaged foods.</td></tr>
+          <tr><td>Titan Company</td><td>Lifestyle</td><td>Watches, jewelry (Tanishq), eyewear and accessories.</td></tr>
+          <tr><td>Taj Hotels (IHCL)</td><td>Hospitality</td><td>Luxury to leisure hospitality under Taj, Vivanta, and more.</td></tr>
+          <tr><td>Air India (via Tata Group)</td><td>Aviation</td><td>Flag carrier of India; group involvement in airline turnaround.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="h2">Frequently Asked Questions</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Who is Ratan Tata?</h3>
+          <p>He is an Indian industrialist and philanthropist, best known as the former Chairman of Tata Sons and the Tata Group.</p>
+        </div>
+        <div class="card">
+          <h3>What is he most known for?</h3>
+          <p>Globalizing the Tata Group with strategic acquisitions, and advocating ethical leadership and philanthropy.</p>
+        </div>
+        <div class="card">
+          <h3>Which awards has he received?</h3>
+          <p>Among others, India’s <em>Padma Bhushan</em> (2000) and <em>Padma Vibhushan</em> (2008).</p>
+        </div>
+        <div class="card">
+          <h3>What are some initiatives linked to social impact?</h3>
+          <p>Through Tata Trusts and group CSR, long‑term support to health, education, water, livelihoods, and research.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer>
+    <div class="container">
+      <p><strong>Note:</strong> This is a student‑friendly, single‑file HTML page for learning and presentation. It summarizes widely known information about Ratan Tata and the Tata Group.</p>
+      <p>© <span id="year"></span> Tribute Page • Built with semantic HTML, responsive CSS and a dash of JavaScript.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="btn" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+  <script>
+    // Small helper: animated counters
+    document.querySelectorAll('.k').forEach(el => {
+      const target = parseFloat(el.getAttribute('data-k')) || 0;
+      let n = 0; const step = Math.max(1, Math.ceil(target/60));
+      const t = setInterval(()=>{ n += step; if(n>=target){ n = target; clearInterval(t) } el.textContent = n + (el.textContent.includes('+') ? '+' : '') }, 18);
+    });
+
+    // Timeline filter
+    function filterTimeline(){
+      const q = document.getElementById('timelineSearch').value.trim().toLowerCase();
+      const items = document.querySelectorAll('#timelineList li');
+      items.forEach(li => {
+        const text = (li.innerText + ' ' + (li.dataset.tags||'')).toLowerCase();
+        li.style.display = text.includes(q) ? 'grid' : 'none';
+      });
+    }
+    function resetTimeline(){
+      document.getElementById('timelineSearch').value = '';
+      document.querySelectorAll('#timelineList li').forEach(li => li.style.display = 'grid');
+    }
+
+    // Quote search
+    function filterQuotes(){
+      const q = document.getElementById('quoteSearch').value.trim().toLowerCase();
+      document.querySelectorAll('#quoteGrid .quote').forEach(card => {
+        const text = (card.innerText + ' ' + (card.dataset.tags||'')).toLowerCase();
+        card.style.display = text.includes(q) ? 'block' : 'none';
+      })
+    }
+    function resetQuotes(){
+      document.getElementById('quoteSearch').value='';
+      document.querySelectorAll('#quoteGrid .quote').forEach(card => card.style.display='block');
+    }
+    function quickQuoteTag(tag){
+      document.getElementById('quoteSearch').value = tag;
+      filterQuotes();
+    }
+
+    // Theme toggle (simple demo)
+    const themeBtn = document.getElementById('themeBtn');
+    themeBtn?.addEventListener('click', () => {
+      const light = document.body.classList.toggle('light');
+      themeBtn.setAttribute('aria-pressed', light ? 'true' : 'false');
+      if(light){
+        document.documentElement.style.setProperty('--bg', '#f7f7fb');
+        document.documentElement.style.setProperty('--card', '#ffffff');
+        document.documentElement.style.setProperty('--text', '#0b1020');
+        document.documentElement.style.setProperty('--muted', '#475569');
+      } else {
+        document.documentElement.style.setProperty('--bg', '#0b1020');
+        document.documentElement.style.setProperty('--card', '#10172a');
+        document.documentElement.style.setProperty('--text', '#e6eeff');
+        document.documentElement.style.setProperty('--muted', '#8ea0bf');
+      }
+    });
+
+    // Back to top visibility
+    const backBtn = document.getElementById('backToTop');
+    const onScroll = () => backBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Download the current HTML as a file
+    function downloadPage(){
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'ratan-tata-profile.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+    window.downloadPage = downloadPage;
+  </script>
+</body>
+</html>
