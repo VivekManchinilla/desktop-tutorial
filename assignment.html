@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kidz World</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #2ef900;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .navbar h1 {
+      color: #171717;
+      font-size: 1.8rem;
+    }
+    .cart {
+      background: #f62c2c;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cart:hover {
+      background: #e20000;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #ffffff, #3ff408);
+      border-radius: 0 0 30px 30px;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 2rem 0 1.5rem;
+      color: #333;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem 3rem;
+    }
+
+    .card {
+      background: #121212;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      margin: 0.8rem 0 0.2rem;
+      color: #ffffff;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+    .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0.8rem 0;
+      color: #a205ba;
+    }
+    .btn {
+      background: #ff0000;
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #e65c00;
+    }
+
+    /* Footer */
+    .footer {
+      background: #000000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .footer p {
+      margin: 0.5rem 0;
+    }
+    .footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .navbar h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Kidz World</h1>
+    <div class="cart">🛒 Cart (0)</div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Shop. Have Fun. Repeat.</h2>
+    <p>#NewAndNow</p>
+  </section>
+
+  <!-- Books Section -->
+  <h2 class="section-title">📚 Discover New Books</h2>
+  <div class="product-grid">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyClnIbsr6OzvJbHPzzI8jFLMCvfuSYobhtg&s" alt="This was our pact">
+      <h3>This was our pact</h3>
+      <p>Ryan Andrews</p>
+      <div class="price">$7.49</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRziYSlK9tTLfWD_eZ4jdlXHkZ-MTo7lXXg&s" alt="The Famous Five">
+      <h3>The Famous Five</h3>
+      <p>Enid Blyton</p>
+      <div class="price">$4.59</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/M/MV5BMTg3NzQ2NDgyNF5BMl5BanBnXkFtZTcwMDc1NzIyMw@@._V1_FMjpg_UX1000_.jpg" alt="Diary of a Wimpy Kid">
+      <h3>Diary of a Wimpy Kid</h3>
+      <p>Jeff Kinney</p>
+      <div class="price">$6.99</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://www.maplepress.co.in/cdn/shop/files/thelittleprince_700x700.jpg?v=1685425229" alt="The Little Prince">
+      <h3>The Little Prince</h3>
+      <p>Antoine de Saint-Exupéry</p>
+      <div class="price">$5.49</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://offshootbooks.com/cdn/shop/products/Pinochiocover_large.jpg?v=1652433434" alt="Pinocchio">
+      <h3>Pinocchio</h3>
+      <p>Carlo Collodi</p>
+      <div class="price">$29.99</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Brought to you by <strong>Vivek</strong></p>
+    <p>Made with ❤️ by Kalvian</p>
+    <p>Talk to me at <a href="mailto:mcchocoboyv88@gmail.com">mcchocoboyv88@gmail.com</a></p>
+  </footer>
+</body>
+</html>
